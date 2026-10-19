@@ -1,0 +1,5 @@
+# Byggmappar skapas automatiskt av dotnet och ska INTE ligga på GitHub.
+bin/
+obj/
+.vs/
+*.user
