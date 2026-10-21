@@ -1,3 +1,11 @@
+/*
+ Program.cs = receptionen. Den visar menyn och tar emot vad användaren skriver.
+ Själva jobbet gör JobManager.
+
+ Så fungerar det:
+   while-loop visar menyn  ->  switch väljer vad som händer  ->  val 0 avslutar.
+*/
+
 using JobTracker;
 
 // Program.cs = "receptionen". Den pratar med användaren och ber JobManager göra jobbet.
@@ -13,6 +21,7 @@ var manager = new JobManager();
 // Ta bort de här raderna när du vill börja med en tom lista.
 AddSampleData(manager);
 
+// running = true betyder att menyn visas igen. Vid val 0 blir den false.
 bool running = true;
 
 // while-loop: menyn visas om och om igen tills användaren väljer Avsluta.

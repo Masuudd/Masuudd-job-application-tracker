@@ -1,3 +1,8 @@
+/*
+ JobApplication = ritningen för EN ansökan (företag, tjänst, status, datum, lön).
+ Varje ansökan i programmet är ett objekt som är gjort efter den här ritningen.
+*/
+
 namespace JobTracker;
 
 // En KLASS är en ritning. Analogi: ritningen till ett "ansökningskort".
