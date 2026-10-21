@@ -1,3 +1,16 @@
+/*
+ JobManager = pärmen som håller alla ansökningar.
+ Den kan: lägga till, ta bort, ändra status, filtrera, sortera och räkna.
+
+ LINQ = ett enkelt sätt att fråga en lista:
+   Where   = "ge mig bara de som matchar"  (filtrera)
+   OrderBy = "lägg dem i ordning"          (sortera)
+   Count   = "hur många finns det?"        (räkna)
+   Average = "vad är snittet?"             (medelvärde)
+
+ Varför LINQ? Det blir en rad i stället för en lång foreach med if.
+*/
+
 namespace JobTracker;
 
 // JobManager = "chefen över högen med ansökningskort".
@@ -70,6 +83,7 @@ public class JobManager
     // "a => a.Status == status" läses: "för varje ansökan a, behåll den om statusen matchar".
     public void ShowByStatus(Status status)
     {
+        // Where = filter: behåll bara ansökningar med rätt status.
         var filtered = Applications.Where(a => a.Status == status);
         PrintList(filtered);
     }
@@ -79,6 +93,7 @@ public class JobManager
     // OrderBy ändrar INTE originallistan, den ger en ny sorterad vy.
     public void ShowSortedByDate()
     {
+        // OrderBy = sortera efter datum, äldst först.
         var sorted = Applications.OrderBy(a => a.ApplicationDate);
         PrintList(sorted);
     }
@@ -114,6 +129,7 @@ public class JobManager
 
         // Steg 2: Average() på en TOM lista kraschar, så vi kollar med Any() först.
         // Any() = "finns det minst ett element?"
+        // Any() = finns det något? Utan den kraschar Average() på en tom lista.
         if (answered.Any())
         {
             // "!" betyder: "jag lovar att ResponseDate inte är null här" (vi filtrerade ju bort null).
