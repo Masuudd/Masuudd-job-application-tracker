@@ -1,0 +1,9 @@
+REFLEKTION (skriv med egna ord, det är DIN inlämning)
+
+1. Hur hjälpte LINQ dig att skriva renare kod?
+Tips att tänka på: Hur hade du löst filtrering/sortering utan LINQ (foreach + if + ny lista)?
+Hur många rader hade det blivit jämfört med en rad Where(...)?
+
+2. Vilken del av projektet var mest utmanande, och hur löste du den?
+Tips: Var det Git/branches/PR, LINQ-syntaxen (=>), eller felhantering?
+Beskriv problemet, vad du provade och vad som till slut funkade.
